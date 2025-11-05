@@ -14,3 +14,8 @@ df['job_posted_month'] = df.job_posted_date.dt.month #add new column job_posted_
 df.sort_values('job_posted_date', inplace = True) #sort the date by job_posted_date
 df.drop('salary_hour_avg', axis = 1, inplace = True) #drop salary_hour_avg column
 df.dropna(subset = ['salary_year_avg'], inplace = True) #drops null values for salary_year_avg
+min_salary = df['salary_year_avg'].idxmin()
+df['job_title_short'].value_counts()
+df.groupby('job_title_short')['salary_year_avg'].min().sort_values()
+df.groupby(['job_country', 'job_title_short'])['salary_year_avg'].median().sort_values()
+df.groupby(['job_title_short','job_country'])['salary_year_avg'].agg(['min','max','median'])
