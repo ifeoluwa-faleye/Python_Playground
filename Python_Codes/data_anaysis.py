@@ -22,3 +22,9 @@ df.groupby(['job_title_short','job_country'])['salary_year_avg'].agg(['min','max
 us_jobs = df[df['job_country'] == "United States"]
 us_jobs = us_jobs[us_jobs['salary_year_avg'].notna()]
 us_jobs.groupby(['job_title_short'])['salary_year_avg'].agg(['sum','mean','median','min','max']).sort_values(by = 'median')
+import matplotlib.pyplot as plt
+date_counts = df.job_posted_month.value_counts()
+date_counts = date_counts.sort_index()
+date_counts
+plt.plot(date_counts.index, date_counts.values)
+plt.show()
