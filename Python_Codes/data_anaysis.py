@@ -28,3 +28,9 @@ date_counts = date_counts.sort_index()
 date_counts
 plt.plot(date_counts.index, date_counts.values)
 plt.show()
+
+
+
+number = [10, 9, 50, 25, 300, 5000]
+number.sort()
+print(number)
