@@ -5,3 +5,5 @@ df = (
     .csv("/Volumes/workspace/bronze/source_system/source_crm/prd_info.csv")
 )
 df.display()
+# Writing to Bronze Layer
+df.write.mode("overwrite").saveAsTable("bronze.crm_prd_info")
