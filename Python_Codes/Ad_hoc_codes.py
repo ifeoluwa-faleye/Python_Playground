@@ -23,3 +23,7 @@ df.display()
 # Writing to Bronze Layer
 df.write.mode("overwrite").saveAsTable("bronze.crm_prd_info")
 df.write.mode("overwrite").saveAsTable("bronze.crm_sales_details")
+df.display()
+# Writing to Bronze Layer
+df.write.mode("overwrite").saveAsTable("bronze.crm_prd_info")
+df.write.mode("overwrite").saveAsTable("bronze.crm_sales_details")
